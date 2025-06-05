@@ -101,6 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    document.getElementById('dark-toggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+    });
 
 
     function renderBooks(items) {
