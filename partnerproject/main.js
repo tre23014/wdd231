@@ -101,6 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    document.querySelectorAll('.clear-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-clear');
+            const input = document.getElementById(id);
+            if (input) {
+                input.value = '';
+                document.getElementById('search-form').dispatchEvent(new Event('submit'));
+            }
+        });
+    });
+
     document.getElementById('dark-toggle').addEventListener('click', () => {
         document.documentElement.classList.toggle('dark');
     });
